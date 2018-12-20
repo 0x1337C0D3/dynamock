@@ -1,9 +1,9 @@
 # dynamock
-Simple DynamoDB mocking for testing
+DynamoDB mocking for testing
 
 # How to use
 
-The syntax for expectation store is similar to jmockit in Java. 
+The syntax for expectation store is similar to `mockito` in Java.
 
 ```
 // mocked struct
@@ -35,9 +35,10 @@ func TestInvalidGetByDb(t *testing.T) {
 
 # Supported operation
 
-Currently, only the below methods of `dynamodbiface.DynamoDBAPI` are supported. However, more will come in later later
+Currently, only the below methods of `dynamodbiface.DynamoDBAPI` are supported. However, more will come in later commits.
 
 ``` go
 func (e *dynamodbiface.DynamoDBAPI) Scan(input *dynamodb.ScanInput) (*dynamodb.ScanOutput, error)
 func (e *dynamodbiface.DynamoDBAPI) GetItem(input *dynamodb.GetItemInput) (*dynamodb.GetItemOutput, error) 
+func (e *dynamodbiface.DynamoDBAPI) Query(input *dynamodb.QueryInput) (*dynamodb.QueryOutput, error) 
 ```
